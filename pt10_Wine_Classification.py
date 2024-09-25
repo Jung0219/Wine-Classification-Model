@@ -1,41 +1,5 @@
 # Softmax and cross entropy
 # dropout and batch normalization
-"""
-1. softmax
-    a. pytorch has its built-in softmax function
-    b. softmax = nn.Softmax(dimensions)
-        i. here, the dimensions have to be always one lower than the input's dimensions
-    c. torch.softmax(input_features)
-2. cross entropy
-    a. this is a commonly used loss function for classification problems
-    b. this measures the difference between two probability distributions
-    c. pytorch built-in function is nn.CrossEntropyLoss()
-    d. WHEN YOU USE CROSS ENTROPY, SOFTMAX IS ALREADY APPLIED
-    e. it expects raw logits as input, without any operation done on it.
-3. dropout
-    a. literally dropping out some data to prevent overfitting
-    b. by making the training data random, it forces to machine to not rely on certain neurons
-4. batch normalization
-    a. in the training, data can be shifted to certain neurons more as the weights are updated.
-    b. batch normalization takes care of this issue
-    c. BatchNorm1d, BatchNorm2d, BatchNorm3d
-5. model modes
-    a. model.train()
-    b. model.eval()
-    c. the way functions behave in the two modes change
-6. loss calculation
-    a. assuming that you train the model over multple epochs, it's better to calculate loss per epoch instead of individually
-    b. take an average
-7. torch.max
-    a. the dimensions are confusingaf
-    b. in the case of 2d matrix
-        i. if dim = 0: max among the columns
-        ii. if dim = 1: max among the rows
-        iii. I guess it's comparing one matrix with another
-    c. values, index = torch.max(tensor, dimension)
-    d. 
-"""
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
